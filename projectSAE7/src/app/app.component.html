@@ -1,0 +1,20 @@
+<!--  {{ title }} <br>
+{{classe}}
+<ul>
+  <li *ngFor="let t of tab">
+    {{t}}</li>
+</ul>
+<button (click)="first()">Click me!</button>
+<input [value]="title">
+<div>
+  <app-product></app-product>
+</div>
+ -->
+<!-- <app-products></app-products>
+<app-product></app-product> -->
+ <a routerLink="products">products</a>
+<a [routerLink]="['product',1]">product</a> 
+
+<div>
+<router-outlet></router-outlet>
+</div>

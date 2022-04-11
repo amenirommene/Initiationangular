@@ -1,0 +1,15 @@
+<input type="number" [(ngModel)]="prop1"> {{prop1}}
+<ul>
+    <div *ngFor="let p of listProduct, let i = index, let f = first">    
+        
+        <li *ngIf="p.price <= prop1" >
+     
+        {{i}} **  {{p.id}} ** {{p.title}} ** {{p.price}} **** {{p.quantity}} ** {{p.like}} 
+        <a [routerLink]="['/product',p.id]">product</a> 
+
+        <button (click)="decrement(p)" [disabled]="p.quantity <= 0">Buy</button>
+        <button (click)="like(i)" *ngIf="p.like < 10">Like</button>
+        <button (click)="like(i)" [hidden]="p.like == 10">Like</button>
+    </li>
+    </div>
+</ul>
