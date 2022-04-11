@@ -10,6 +10,8 @@
         <button (click)="decrement(p)" [disabled]="p.quantity <= 0">Buy</button>
         <button (click)="like(i)" *ngIf="p.like < 10">Like</button>
         <button (click)="like(i)" [hidden]="p.like == 10">Like</button>
+        <button (click)="deleteProduct(p)">Delete</button>
     </li>
     </div>
 </ul>
+<button (click)="addProductFromService()">Add</button>
