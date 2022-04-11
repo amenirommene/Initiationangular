@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let p of productList">
+        {{p.id}} ** {{p.title}} ** {{p.quantity}} 
+        <button [disabled]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
+        <button [hidden]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
+        <button *ngIf="p.quantity != 0" (click)="buyProduct(p)">Buy</button>
+    </li>
+</ul>
