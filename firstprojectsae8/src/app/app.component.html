@@ -1,17 +1,22 @@
+<a [routerLink]="['products']">Products</a> 
+<a routerLink="test2">Test</a>
+<div>
+  <router-outlet></router-outlet>
+</div>
 <!---one-way databinding-->
-Bonjour {{ title }} 
+<!-- Bonjour {{ title }} --->
 <!--interpolation-->
-<br>
-<button (click)="setTexte()">Test</button> 
+<!-- <br>
+<button (click)="setTexte()">Test</button>  -->
 <!---event-binding-->
-<br>
+<!-- <br>
 <input type="text" value="title">
 <br>
-<input type="text" [value]="title">
+<input type="text" [value]="title"> -->
 <!---property binding-->
 <br>
 <!--two-way databinding-->
-{{prop1}} ** p= {{p}}
+<!-- {{prop1}} ** p= {{p}}
 <input type="text" [value]="prop1" (keyup)="setInputValue(p.value)" #p>
 <br>
 NgModel:<input type="text" [(ngModel)]="prop1">
@@ -20,5 +25,5 @@ NgModel:<input type="text" [(ngModel)]="prop1">
 </div>
 <div>
   <app-test></app-test>
-</div>
-<app-products></app-products>
+</div> -->
+ 

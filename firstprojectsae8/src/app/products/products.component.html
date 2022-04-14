@@ -1,8 +1,14 @@
+Prix : <input type="number" [(ngModel)]="prix">
 <ul>
-    <li *ngFor="let p of productList">
-        {{p.id}} ** {{p.title}} ** {{p.quantity}} 
+    <div *ngFor="let p of productList, let i=index, let f=first">
+    <li *ngIf="prix == null || p.price <= prix" [style.backgroundColor]="getColor(p)" >
+    <!-- <li [hidden]="!(prix == null || p.price <= prix)" [style.backgroundColor]="getColor(p)" ></li> -->
+      {{f}} ** {{i}} ** {{p.id}} ** {{p.title}} ** {{p.quantity}} ** {{p.like}} ** {{p.price}} 
         <button [disabled]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
         <button [hidden]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
         <button *ngIf="p.quantity != 0" (click)="buyProduct(p)">Buy</button>
+        <button (click)="likeProduct(i)">Like</button>
+    <a [routerLink]="['/product',p.id]">Details</a>
     </li>
+</div>
 </ul>

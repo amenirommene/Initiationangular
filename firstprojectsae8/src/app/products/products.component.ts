@@ -8,8 +8,10 @@ import { Product } from '../models/product';
 })
 export class ProductsComponent implements OnInit {
   productList : Product[];
+  prix : number ;
   constructor() {}
   ngOnInit(): void {
+    console.log("test routes");
     this.productList=[
       {id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0},
       {id: 2, title: "T-shirt 2", price: 21, quantity: 10, like: 0},
@@ -18,6 +20,19 @@ export class ProductsComponent implements OnInit {
   buyProduct(p:Product){
    // p.quantity=p.quantity-1;
     p.quantity -=1;
+  }
+
+  getColor(p:Product){
+    if (p.quantity == 0){
+      return 'red';
+    }
+    else{
+      return 'green';
+    }
+  }
+
+  likeProduct(p:number){
+    this.productList[p].like +=1;
   }
 
 }

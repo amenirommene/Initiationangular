@@ -7,12 +7,16 @@ import { TestComponent } from './test/test.component';
 import { TestModule } from './test/test.module';
 import { ProductsComponent } from './products/products.component';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    ProductsComponent
+    ProductsComponent,
+    NotFoundComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
