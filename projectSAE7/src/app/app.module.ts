@@ -18,8 +18,8 @@ import { HttpClientModule } from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    FormsModule, // directive: ngModel
+    HttpClientModule // service : HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]

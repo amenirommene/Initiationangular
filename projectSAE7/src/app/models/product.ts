@@ -1,7 +1,7 @@
 export class Product{
-id:number;
+id?:number;
 title:string;
 price:number;
 quantity:number ;
-like:number;
+like:number=0;
 }

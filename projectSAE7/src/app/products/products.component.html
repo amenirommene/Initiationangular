@@ -15,3 +15,55 @@
     </div>
 </ul>
 <button (click)="addProductFromService()">Add</button>
+<form #f="ngForm">
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>
+                <!-- <div *ngIf="title.errors"> -->
+                <div *ngIf="title.touched && title.errors?.required">
+                    Title obligatoire
+                </div>
+                <div *ngIf="title.errors?.minlength">
+                    Title contient au min 
+                    {{title.errors.minlength.requiredLength}} caractères alors que vous avez tapé 
+                    {{title.errors.minlength.actualLength}} 
+                </div>
+            <!-- </div> -->
+                <input name="title" type="text" required minlength="5" [(ngModel)]="product.title" #title="ngModel"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>
+                <div [hidden]="!(price.touched && price.invalid)"> <!--property binding-->
+                    Price obligatoire
+                </div>
+                <input name="price" type="text" required [(ngModel)]="product.price" #price="ngModel"></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>
+                <div *ngIf="quantity.errors">
+                    <div *ngIf="quantity.errors.required">
+                        quantity obligatoire
+                    </div>
+                    <div *ngIf="quantity.errors.pattern">
+                        quantité ne respecte pas le pattern exactement 3 chiffres
+                
+                    </div>
+                </div>
+                <input name="quantity" type="number" required pattern="[1-9][0-9][0-9]" [(ngModel)]="product.quantity" #quantity="ngModel"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" (click)="addProduct()" [disabled]="f.invalid" value="add"></td>
+        </tr>
+    </table>
+    
+</form>
+valide:{{title.valid}} <br>
+touched:{{title.touched}}<br>
+dirty:{{title.dirty}}<br>
+<div *ngIf="title.errors">
+    errors:{{title.errors.required}}
+    </div>

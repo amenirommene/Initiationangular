@@ -9,6 +9,7 @@ import { ProductService } from '../shared/product.service';
   providers:[]
 })
 export class ProductsComponent implements OnInit {
+  product : Product=new Product();
   prop1 : number = 50;
   listProduct : Product[]=[];
     decrement(p:Product){
@@ -32,7 +33,10 @@ export class ProductsComponent implements OnInit {
       "like": 0
     }).subscribe(res=>this.ps.getAllProducts().subscribe(res=>this.listProduct=res));
   }
-
+  addProduct(){
+    console.log(this.product);
+    this.ps.AddProduct(this.product).subscribe(res=>this.ps.getAllProducts().subscribe(res=>this.listProduct=res));
+  }
   deleteProduct(p:Product){
     this.ps.deleteProduct(p).subscribe(res=>this.ps.getAllProducts().subscribe(res=>this.listProduct=res));
   }
