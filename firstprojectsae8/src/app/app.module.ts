@@ -9,7 +9,7 @@ import { ProductsComponent } from './products/products.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductComponent } from './product/product.component';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { ProductComponent } from './product/product.component';
     BrowserModule,
     AppRoutingModule,
     TestModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

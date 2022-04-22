@@ -4,7 +4,8 @@ Prix : <input type="number" [(ngModel)]="prix">
     <li *ngIf="prix == null || p.price <= prix" [style.backgroundColor]="getColor(p)" >
     <!-- <li [hidden]="!(prix == null || p.price <= prix)" [style.backgroundColor]="getColor(p)" ></li> -->
       {{f}} ** {{i}} ** {{p.id}} ** {{p.title}} ** {{p.quantity}} ** {{p.like}} ** {{p.price}} 
-        <button [disabled]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
+      <button (click)="deleteProduct(p)">Delete</button>  
+      <button [disabled]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
         <button [hidden]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
         <button *ngIf="p.quantity != 0" (click)="buyProduct(p)">Buy</button>
         <button (click)="likeProduct(i)">Like</button>

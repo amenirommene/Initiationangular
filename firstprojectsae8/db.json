@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 4,
+      "title": "T-shirt 4",
+      "price": 180,
+      "quantity": 0,
+      "like": 0
+    },
+    {
+      "id": 5,
+      "title": "T-shirt 5",
+      "price": 180,
+      "quantity": 0,
+      "like": 0
+    }
+  ]
+}
