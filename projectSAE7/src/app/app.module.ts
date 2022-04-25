@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MonFilsProductComponent } from './mon-fils-product/mon-fils-product.component'
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MonFilsProductComponent
   ],
   imports: [
     BrowserModule,

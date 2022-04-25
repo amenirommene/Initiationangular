@@ -31,4 +31,10 @@ export class ProductService {
     return this._http.delete<Product>(this.baseUrlProduct+"/"+p.id);
 
   }
+
+  UpdateProduct(p:Product): Observable<Product>{
+    return this._http.put<Product>(this.baseUrlProduct+'/'+p.id,p);
+  }
+
+  
 }

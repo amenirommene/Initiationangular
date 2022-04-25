@@ -1,0 +1,4 @@
+{{i}} **  {{p.id}} ** {{p.title}} ** {{p.price}} **** {{p.quantity}} ** {{p.like}} 
+<input value="" #nblike> 
+<button (click)="like()" *ngIf="p.like < 10">Like + 1</button>
+<button (click)="like2(nblike.value)" *ngIf="p.like < 10">Like </button>
