@@ -1,0 +1,29 @@
+<form  #f="ngForm" >
+    id : <input type="number" required  name="id" [(ngModel)]="product.id" #id="ngModel" >
+   <div *ngIf="id.touched && id.invalid">
+       id obligatoire
+   </div>
+ <br>  title : <input type="text" required minlength="5"  name="title" [(ngModel)]="product.title" #title="ngModel" >
+  <div *ngIf="title.errors"> <!---title.invalid-->
+    <div *ngIf="title.errors.required">
+       Title obligatoire
+   </div>
+   <div *ngIf="title.errors.minlength">
+    Title doit contenir au minimum {{title.errors.minlength.requiredLength}} caractères alors que tu as écris {{title.errors.minlength.actualLength}} 
+</div>
+</div>
+
+ <br>  Quantity : <input type="number" pattern="[1-9][0-9]*" required  name="quantity" [(ngModel)]="product.quantity" #quantity="ngModel" >
+ <div *ngIf="quantity.errors?.required">
+    quantity obligatoire
+</div> 
+ <div *ngIf="quantity.errors?.pattern">
+       quantity doit être > 0
+   </div>
+  
+ <br>  Price : <input type="number" required   name="price" [(ngModel)]="product.price" #price="ngModel" >
+   
+   <br>
+   <button [disabled]="f.invalid" (click)="addProduct()">submit</button>
+</form>
+ la valeur de l'id est:{{ id.valid }} {{ id.touched }} {{ id.dirty }}
