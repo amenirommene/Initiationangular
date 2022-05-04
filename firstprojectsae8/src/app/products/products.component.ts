@@ -11,12 +11,12 @@ import { ProductsService } from '../Shared/products.service';
 export class ProductsComponent implements OnInit {
   productList : Product[];
   prix : number ;
+  product : Product=new Product();
   constructor(private ps:ProductsService) {}
   ngOnInit(): void {
     console.log("test routes");
    // this.productList=this.ps.getAllProducts(); //synchrone
-   this.ps.getAllProductsFromDB().subscribe
-   (res=>this.productList=res);
+   this.getAllProduct();
   }
   buyProduct(p:Product){
    // p.quantity=p.quantity-1;
@@ -39,5 +39,12 @@ export class ProductsComponent implements OnInit {
   deleteProduct(p:Product){
     this.ps.deleteProduct(p).subscribe(res=>this.ps.getAllProductsFromDB().subscribe(res=>this.productList=res));
 
+  }
+  updateProduct(p:Product){
+    this.product=p;
+  }
+  getAllProduct(){
+    this.ps.getAllProductsFromDB().subscribe
+    (res=>{this.productList=res, alert ('product edited successfully'), this.product=new Product()});
   }
 }

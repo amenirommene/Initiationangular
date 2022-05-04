@@ -10,7 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddProductComponent } from './add-product/add-product.component'
+import { AddProductComponent } from './add-product/add-product.component';
+import { ShowproductComponent } from './showproduct/showproduct.component';
+import { UpdateProductComponent } from './update-product/update-product.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { AddProductComponent } from './add-product/add-product.component'
     ProductsComponent,
     NotFoundComponent,
     ProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    ShowproductComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,

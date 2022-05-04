@@ -9,7 +9,17 @@ Prix : <input type="number" [(ngModel)]="prix">
         <button [hidden]="p.quantity == 0" (click)="buyProduct(p)">Buy</button>
         <button *ngIf="p.quantity != 0" (click)="buyProduct(p)">Buy</button>
         <button (click)="likeProduct(i)">Like</button>
+        <button (click)="updateProduct(p)">update</button>
     <a [routerLink]="['/product',p.id]">Details</a>
     </li>
 </div>
 </ul>
+<app-update-product (edited)="getAllProduct()" [product]="product" ></app-update-product>
+
+
+<div *ngFor="let p of productList, let i=index, let f=first">
+ 
+     <app-showproduct [myProduct]="p"></app-showproduct>
+
+
+</div>

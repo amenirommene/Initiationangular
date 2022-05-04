@@ -30,4 +30,8 @@ export class ProductsService {
     return this._http.post<Product>("http://localhost:3000/products",p);
 
   }
+  updateProduct(p:Product):Observable<Product>{
+    return this._http.put<Product>("http://localhost:3000/products/"+p.id,p);
+
+  }
 }
